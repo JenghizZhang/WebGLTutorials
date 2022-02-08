@@ -79,7 +79,7 @@ void main() {
      +  texture(inTexture, cc - jj )
      -4.*texture(inTexture, cc  ) ;
 
-    // float a = 0.1 ;
+    // float a = 0.1 ; // change a to uniform
     float b = 0.3 ;
     float epsilon = 0.01 ;
      float du2dt = diffCoef*laplacian.r/(dx*dx) + u*(1.-u)*(u-a) - v;
@@ -125,6 +125,7 @@ var init = new Abubu.Solver({
 } ) ;
 init.render() ;
 
+//要保证两边都添加
 var fmarch = new Abubu.Solver({
         fragmentShader : source('march') ,
         uniforms: {
